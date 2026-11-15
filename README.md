@@ -201,9 +201,6 @@ mkdir .devcontainer
 Then you need to create a `devcontainer.json` file in that new directory and make this contents:
 
 ```json
-New-Item -ItemType Directory -Force -Path .devcontainer
-
-@'
 {
   "name": "Spartan Success React Native",
   "image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
@@ -231,7 +228,6 @@ New-Item -ItemType Directory -Force -Path .devcontainer
     }
   }
 }
-'@ | Set-Content -Path .devcontainer\devcontainer.json -Encoding UTF8
 ```
 
 ___
