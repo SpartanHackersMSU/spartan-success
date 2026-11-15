@@ -90,3 +90,15 @@ node -v
 java -version
 adb --version
 ```
+
+## Android Emulator
+
+For local development, we will need an android emulator to test the app. But first we need to enable the windows hypervisor platform to enable virtualization. We can do this easily by using the shortcut in Android Studio.
+
+Click:
+- *More Options*
+- *Virtual Device Manager*
+- Next to *Windows Hypervisor Platform is not enabled* in red, click *Enable*
+- Either click *Enable and restart now* or *Enable*. If you click *Enable*, you will need to manually reboot.
+
+At the time of writing, November 15, 2026, Android Studio automatically sets up an emulator, so after the reboot, everything should be setup.
