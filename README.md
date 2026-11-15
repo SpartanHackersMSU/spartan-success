@@ -170,6 +170,69 @@ To start the android emulator, type `a`.
 
 ## Github Codespaces
 
+### Git Cleanup
+
+To stop expo, you can press and hold `Ctrl` then press `C`.
+
+To prepare for codespaces, let's merge everything back into main.
+
+```powershell
+git add .
+git commit -m "Stopping expo"
+git push
+git switch main
+git pull
+git merge feat/main-dashboard
+git push
+git branch -d feat/main-dashboard
+git push origin --delete feat/main-dashboard
+```
+
+### Devcontainer Definition
+
+We need to create a devcontainer definition so that github codespaces knows how to setup the devcontainer for our project.
+
+First you need to create a `.devcontainer` directory.
+
+```powershell
+mkdir .devcontainer
+```
+
+Then you need to create a `devcontainer.json` file in that new directory and make this contents:
+
+```json
+New-Item -ItemType Directory -Force -Path .devcontainer
+
+@'
+{
+  "name": "Spartan Success React Native",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
+  "features": {
+    "ghcr.io/devcontainers/features/java:1": {
+      "version": "17",
+      "installGradle": true
+    }
+  },
+  "forwardPorts": [8081],
+  "portsAttributes": {
+    "8081": {
+      "label": "Expo Metro Bundler",
+      "onAutoForward": "notify"
+    }
+  },
+  "postCreateCommand": "npm install && npm install -g @expo/ngrok@^4.1.0",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "expo.vscode-expo-tools",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode"
+      ]
+    }
+  }
+}
+'@ | Set-Content -Path .devcontainer\devcontainer.json -Encoding UTF8
+```
 
 ___
 
