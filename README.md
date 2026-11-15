@@ -32,4 +32,15 @@ Now that git is installed, we can open vscode and navigate to source control.
 
 There we can clone the repository to a folder on the current machine.
 
-## 
+## Setting up Git Credentials
+
+To differentiate commits from different users, we will need to be sure to set our git user name and email at a terminal prompt.
+
+This con be accomplished from within vscode by running the following commands.
+
+- NOTE: The username and email used here are an example.
+
+```powershell
+git config --global user.name "spartanhackers"
+git config --global user.email "contact.spartanhackers@gmail.com"
+```
