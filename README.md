@@ -102,3 +102,13 @@ Click:
 - Either click *Enable and restart now* or *Enable*. If you click *Enable*, you will need to manually reboot.
 
 At the time of writing, November 15, 2026, Android Studio automatically sets up an emulator, so after the reboot, everything should be setup.
+
+## Executing Scripts
+
+Next, we need to make sure that we can execute scripts on the system. You will need to change a setting in the Windows Settings menu.
+
+- click or search for *Settings*
+- click *Advanced*
+- click *PowerShell*
+- check the toggole to *On* next to *Change the execution policy to allow local PowerShell scripts to run without signing. Require signing for remote scripts.*
+
