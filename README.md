@@ -65,21 +65,21 @@ That should install latest sdk and platform tools.
 
 Next you'll need to add some environment variables so that some of the tools you just installed can be accessed by any application on the system.
 
-Search `env` on the taskbar to open the *System Properties* dialog.
+Search `env` on the taskbar to open the _System Properties_ dialog.
 
-Click *Environment Variables...* at the bottom.
+Click _Environment Variables..._ at the bottom.
 
 The top section is for User environment variables.
 
-Click *New...*
+Click _New..._
 
-Set the *Variable name:* to `ANDROID_HOME` and the *Variable value:* to `%LOCALAPPDATA%\Android\Sdk` then click *OK*.
+Set the _Variable name:_ to `ANDROID_HOME` and the _Variable value:_ to `%LOCALAPPDATA%\Android\Sdk` then click _OK_.
 
-Then click *Path* and *Edit...*.
+Then click _Path_ and _Edit..._.
 
-Click *New* and set the value to `%LOCALAPPDATA%\Android\Sdk\platform-tools` then click *New* one more time and set the value to `%LOCALAPPDATA%\Android\Sdk\emulator` then click *OK*.
+Click _New_ and set the value to `%LOCALAPPDATA%\Android\Sdk\platform-tools` then click _New_ one more time and set the value to `%LOCALAPPDATA%\Android\Sdk\emulator` then click _OK_.
 
-You can then click *OK* again to exit the environment variables dialog and *OK* one more time to exit *System Properties*
+You can then click _OK_ again to exit the environment variables dialog and _OK_ one more time to exit _System Properties_
 
 You will then need to restart vscode.
 
@@ -98,10 +98,11 @@ adb --version
 For local development, we will need an android emulator to test the app. But first we need to enable the windows hypervisor platform to enable virtualization. We can do this easily by using the shortcut in Android Studio.
 
 Click:
-- *More Options*
-- *Virtual Device Manager*
-- Next to *Windows Hypervisor Platform is not enabled* in red, click *Enable*
-- Either click *Enable and restart now* or *Enable*. If you click *Enable*, you will need to manually reboot.
+
+- _More Options_
+- _Virtual Device Manager_
+- Next to _Windows Hypervisor Platform is not enabled_ in red, click _Enable_
+- Either click _Enable and restart now_ or _Enable_. If you click _Enable_, you will need to manually reboot.
 
 At the time of writing, November 15, 2026, Android Studio automatically sets up an emulator, so after the reboot, everything should be setup.
 
@@ -109,10 +110,10 @@ At the time of writing, November 15, 2026, Android Studio automatically sets up 
 
 Next, we need to make sure that we can execute scripts on the system. You will need to change a setting in the Windows Settings menu.
 
-- click or search for *Settings*
-- click *Advanced*
-- click *PowerShell*
-- check the toggole to *On* next to *Change the execution policy to allow local PowerShell scripts to run without signing. Require signing for remote scripts.*
+- click or search for _Settings_
+- click _Advanced_
+- click _PowerShell_
+- check the toggole to _On_ next to _Change the execution policy to allow local PowerShell scripts to run without signing. Require signing for remote scripts._
 
 ### Project Bootstrap
 
@@ -239,12 +240,35 @@ They we will need to sign into Github with their own personal accounts to get ac
 In order to create write permissions, all users that should be added to a team that will have access to the repo.
 
 In order to initiate a workspace, members should:
+
 - navigate the [repo url]()
 - click the expansion arrow on the green code button
-- click *Create codespace on main*
-- wait for the codespace to initialize and then click *Trust* when prompted to trust the folder.
-___
+- click _Create codespace on main_
+- wait for the codespace to initialize and then click _Trust_ when prompted to trust the folder.
 
+### Feature Branches
+
+Branches can be managed as features.
+
+In general, when a new member starts work on the project, they should create a new branch.
+
+```powershell
+git checkout -b feat/feature-name
+```
+
+Then start expo using the tunnel feature to make the containers app accessible over the web.
+
+```powershell
+npx expo start --tunnel ngrok
+```
+
+They will then need to install the Expo Go app on their device.
+
+This app will allow them to scan the qr code in the terminal to view a live preview of the current application.
+
+They can then begin development on the application.
+
+---
 
 # Welcome to your Expo app 👋
 
