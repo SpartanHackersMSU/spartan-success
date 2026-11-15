@@ -230,6 +230,19 @@ Then you need to create a `devcontainer.json` file in that new directory and mak
 }
 ```
 
+### Working on The Web in Github Codespaces
+
+Now that the repo has all of the necessary files, all members can work on the repo on the web.
+
+They we will need to sign into Github with their own personal accounts to get access to their own codespaces.
+
+In order to create write permissions, all users that should be added to a team that will have access to the repo.
+
+In order to initiate a workspace, members should:
+- navigate the [repo url]()
+- click the expansion arrow on the green code button
+- click *Create codespace on main*
+- wait for the codespace to initialize and then click *Trust* when prompted to trust the folder.
 ___
 
 
